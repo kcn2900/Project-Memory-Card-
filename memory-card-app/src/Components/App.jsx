@@ -31,52 +31,6 @@ const initialOldCards = {
 };
 
 export function App() {
-  // the question is how to check if the new card pulled is old?
-  // actually doesn't matter, since its old, keep trying
-  // to pull a new card, just don't care otherwise
-
-  // next, how do i know which card to replace??
-  // and which card to assign a name?
-  // store a state array?
-
-  // simply to to add/remove cards?
-  // nvm, the card object needs to save each cards' url + name
-  // otherwise it will issues of loading in 12 images from the api
-  // which will be noticable
-  // hmm so that means that we only use the useEffect when
-  // generating new cards? no? pretty much
-
-  // for now, just find a way to get the cards onto the screen
-  // then change the card into a new card when clicked
-  // then finally randomize the order of the cards
-  // everything else doesn't matter as much
-
-  // you will need to filter based on the name of the pokemon on
-  // the card and ensure no repeated cards at the same time
-  // so have a cond for if array item is null
-
-  // ex: arr.map(item => {
-  //     if (item === null) {
-  //         <Card ...props/>
-  //     }
-  //    else {
-  //     <Card ...diff props />
-  //    }
-  // })
-
-  // technically, we kind of don't care that i could get a
-  // repeat of a pokemon even when supposely loading in a
-  // new pokemon, since it's random
-
-  // honestly, just add a new card each time, cause everything is
-  // gonna be randomized @ this point
-
-  // how would i have multiple set states in a single hanlder
-  // i guess its fine to have mutltiple set states in a single
-  // handler
-  // it's due to how react handles set states via batchs and not
-  // one at a time
-
   const [oldCards, setOldCards] = useState({});
   const [savedCardImages, setSavedCardImages] = useState(initialOldCards);
   const [currCards, setCurrCards] = useState(Object.keys(savedCardImages));
